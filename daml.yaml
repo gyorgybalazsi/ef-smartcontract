@@ -1,20 +1,16 @@
-sdk-version: 1.9.0
-name: ef-app
-version: 0.1.0
+sdk-version: 1.7.0
+name: daml-ui-template
 source: daml
 parties:
-- Alice
-- Bob
-- Charlie
-dependencies:
-- daml-prim
-- daml-stdlib
-- daml-trigger
-sandbox-options:
-- --wall-clock-time
-- --ledgerid=ef-app
+  - Alice
+  - Bob
+version: 0.0.1
+init-script: Main:setup
 start-navigator: false
-codegen:
-  js:
-    output-directory: ui/daml.js
-    npm-scope: daml.js
+sandbox-options:
+  - --ledgerid=daml-ui-template
+  - -w
+dependencies:
+  - daml-prim
+  - daml-stdlib
+  - daml-script

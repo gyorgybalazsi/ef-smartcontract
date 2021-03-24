@@ -28,4 +28,3 @@ const overrides = {
 export default {
   default: createMuiTheme({ ...defaultTheme, ...overrides }),
 };
-

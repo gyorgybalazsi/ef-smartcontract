@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import { damlPartyKey, damlTokenKey } from "../config";
 import { useUserState, useUserDispatch } from "../context/UserContext";
+import Layout from "./Layout/Layout";
 import ErrorComponent from "../pages/error/Error";
 import Login from "../pages/login/Login";
-import Layout from "./Layout/Layout";
 
 export default function App() {
   const userState = useUserState();
@@ -16,7 +16,7 @@ export default function App() {
         <Route
           exact
           path="/app"
-          render={() => <Redirect to="/app/retail" />}
+          render={() => <Redirect to="/app/report" />}
         />
         <PrivateRoute path="/app" component={Layout} />
         <PublicRoute path="/login" component={Login} />
@@ -47,11 +47,11 @@ export default function App() {
     })
 
     return (
-      <Redirect to="/app/retail" />
+      <Redirect to="/app/report" />
     )
   }
 
-  function PrivateRoute({ component, ...rest }: any) {
+  function PrivateRoute({ component, ...rest } : any) {
     return (
       <Route
         {...rest}
@@ -73,7 +73,7 @@ export default function App() {
     );
   }
 
-  function PublicRoute({ component, ...rest }: any) {
+  function PublicRoute({ component, ...rest } : any) {
     return (
       <Route
         {...rest}

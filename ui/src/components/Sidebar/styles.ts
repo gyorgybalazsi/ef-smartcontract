@@ -2,7 +2,7 @@ import { makeStyles, createStyles } from "@material-ui/styles";
 
 export default makeStyles((theme : any) => createStyles({
   drawer: {
-    width: 250,
+    width: 180,
     flexShrink: 0,
     whiteSpace: "nowrap",
   },

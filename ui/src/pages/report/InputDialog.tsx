@@ -11,23 +11,23 @@ import FormControl from "@material-ui/core/FormControl";
 import MenuItem from "@material-ui/core/MenuItem";
 
 export interface RegularField {
-  label : string,
+  label : string
   type : "text" | "number" | "date"
 }
 
 export interface SelectionField {
-  label : string,
-  type : "selection",
+  label : string
+  type : "selection"
   items : string[]
 }
 
 export type Field = RegularField | SelectionField
 
 export interface InputDialogProps<T extends {[key: string]: any }> {
-  open : boolean,
-  title : string,
-  defaultValue : T,
-  fields : Record<keyof T, Field>,
+  open : boolean
+  title : string
+  defaultValue : T
+  fields : Record<keyof T, Field>
   onClose : (state : T | null) => Promise<void>
 }
 
@@ -87,4 +87,3 @@ export function InputDialog<T extends { [key : string] : any }>(props : InputDia
     </Dialog>
   );
 }
-
